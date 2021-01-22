@@ -5,13 +5,13 @@
         <a href="javascript:;" class="minimum"></a>
         <a href="javascript:;" class="maximum"></a>
     </header>
-    <!-- 日期 -->
+    <!-- 날짜 -->
     <p class="code">Last login: <span>{{ startDate }}</span> on ttys001</p>
-    <!--代码编辑区-->
+    <!--코드편집영역-->
     <pre>
       <code v-html="highlightedCode"></code>
     </pre>
-    <!-- 打开邀请函 -->
+    <!-- 초대장 열기 -->
     <div
       class="editor-open"
       v-if="(canStart || hasClosed) && !canOpen"
@@ -73,14 +73,14 @@
     },
     methods: {
       scrollToBottom() {
-        // 保持页面一直滚到最下面
+        // 페이지 맨 아래로 스크롤
         this.$refs.editor.scrollTop = 100000
       },
-      // 代码输入
+      // 코드 입력
       progressivelyTyping() {
         return new Promise((resolve) => {
           let count = 0, typingCount = 0, typing
-          // 写代码每一帧的函数
+          // 각 프레임의 함수를 작성
           let step = () => {
             let randomNumber = Math.round(Math.random() * 6)
             // 摸你打字的随机速度
@@ -88,7 +88,7 @@
               this.currentCode = this.code.substring(0, typingCount)
               typingCount++
             }
-            // 大约每 24 帧光标闪动一次
+            // 24프레임마다 플래그가 깜빡임
             if(count % 24 === 0){
               this.isCursorVisible = this.isCursorVisible === 0 ? 1 : 0
             }
@@ -104,7 +104,7 @@
           typing = requestAnimationFrame(step)
         })
       },
-      // 发送弹幕之后
+      // 팝업을 보내고 나서
       onAfterSending(wish) {
         this.wish = wish
         this.canOpen = false
