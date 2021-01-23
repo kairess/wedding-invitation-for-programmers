@@ -5,23 +5,23 @@
         <div class="cover-content" :class="{'invitation-up':isOpening}">
           <div class="content-inside">
             <img class="content-inside-photo" src="../images/photo.jpg">
-            <p>我们结婚啦！</p>
+            <p>우리 결혼했어요！</p>
             <p><b>Jun & undefined</b></p>
-            <p>时间：invalid date value</p>
-            <p>地点：<b>location can not be found</b></p>
+            <p>시간：2021년 5월 8일 오후 1시</p>
+            <p>장소：<b>용산가족공원 연못광장</b></p>
             <div class="content-inside-bless">
               <input
-                placeholder="写下你的祝福" 
+                placeholder="축복의 한 마디" 
                 @keyup.enter="sendBarrage"
                 @focus="isFocused = true"
                 @blur="isFocused = false, hasEntered = false"
                 v-model="wish"
                 ref="wishInput"
               >
-              <p v-if="!wish && isFocused && hasEntered">请输入祝福哦</p>
+              <p v-if="!wish && isFocused && hasEntered">축복을 입력해주세요!</p>
               <div>
-                <button @click="sendBarrage">发送祝福弹幕</button>
-                <button @click="closeInvitation">关闭</button>
+                <button @click="sendBarrage">전송</button>
+                <button @click="closeInvitation">닫기</button>
               </div>
             </div>
           </div>
@@ -46,7 +46,7 @@ export default {
     }
   },
   methods: {
-    // 打开邀请函
+    // 초대장 열기
     openInvitation(){
       this.isOpening = true
     },
@@ -56,7 +56,7 @@ export default {
         this.$emit('onClose')
       }, 660)
     },
-    // 发送弹幕
+    // 축하 탄막 발송
     sendBarrage(){
       this.$nextTick(() => {
         this.hasEntered = true

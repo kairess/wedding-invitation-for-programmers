@@ -83,7 +83,7 @@
           // 각 프레임의 함수를 작성
           let step = () => {
             let randomNumber = Math.round(Math.random() * 6)
-            // 摸你打字的随机速度
+            // 타자치는 속도
             if(count % 2 === 0 && randomNumber % 4 === 0){
               this.currentCode = this.code.substring(0, typingCount)
               typingCount++

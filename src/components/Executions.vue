@@ -1,19 +1,19 @@
 <template>
   <div class="executions">
-    <!--执行命令-->
+    <!--명령어-->
     <p class="code" v-for="(execution, index) in executions" :key="index" v-show="execution.visible">
       <span class="addon">~</span>
       [<span class="time">{{ execution.time }}</span>]
       <span class="task">{{ execution.name }}</span>
       <span class="duration" v-if="execution.duration!==undefined">{{ execution.duration }} ms</span>
     </p>
-    <!--进度条-->
+    <!--진행도-->
     <p class="code" v-show="isProcessed">
       <span class="addon">~</span>
       {{ progressBarText }}
       <span class="percentage">{{ percentage }}%</span>
     </p>
-    <!--执行命令-->
+    <!--명령어-->
     <p class="code" v-show="endExecution.visible">
       <span class="addon">~</span>
       [<span class="time">{{ endExecution.time }}</span>]
@@ -58,14 +58,14 @@
       this.$emit('onUpdating')
     },
     methods: {
-      // 逐条执行命令
+      // 명령어
       runExecutions: async function () {
         for (const execution of this.executions) {
           await this.progressivelyRun(execution)
         }
-        // 执行完命令，开始显示进度条
+        // 명령이 실행되면 진행도를 표시한다
         await this.successProcessing(1000)
-        // 执行最后一条命令
+        // 마지막 명령 실행
         await this.progressivelyRun(this.endExecution)
           .then(() => {
             setTimeout(() => {
@@ -74,7 +74,7 @@
             }, 500)
           })
       },
-      // 执行一条命令
+      // 명령 진행
       progressivelyRun(execution, customDuration) {
         return new Promise((resolve) => {
           let now = new Date(),
@@ -88,7 +88,7 @@
           setTimeout(showCode, duration)
         })
       },
-      // 显示进度条
+      // 진행표시줄 보이기
       successProcessing(duration){
         return new Promise((resolve) => {
           let start = null, progressing, progressingCount = 0
