@@ -22,7 +22,7 @@
         <line x1="9" y1="3" x2="9" y2="21"></line>
       </svg>
     </div>
-    <Executions :canExecute="canExecute" @onUpdating="scrollToBottom" @onFinish="canOpen = true"/>
+    <Executions :canExecute="canExecute" @onUpdating="scrollToBottom" @onFinish="canOpen = true; canStart=true;"/>
     <invitation :canOpen="canOpen" @onClose="canOpen = false, hasClosed = true" @sendBarrage="onAfterSending"/>
     <Barrage :wish="wish" :canStart="canStart"/>
   </div>
@@ -49,7 +49,7 @@
         isCursorVisible: 1,
         canExecute: false,
         canOpen: false,
-        wish: '',
+        wish: '당신의 한마디',
         hasClosed: false,
         canStart: false
       }
@@ -108,9 +108,9 @@
       onAfterSending(wish) {
         this.wish = wish
         this.canOpen = false
-        setTimeout(() => {
-          this.canStart = true
-        }, 800)
+        // setTimeout(() => {
+        //   this.canStart = true
+        // }, 800)
       }
     }
   }

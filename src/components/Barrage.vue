@@ -43,7 +43,7 @@
       }
     },
     methods: {
-      // 弹幕动画开始
+      // 팝업 애니메이션 시작
       barrageAnimationStart() {
         let barrageWidth = this.getWidth(this.$refs.barrage)
         let barrageWidthGroup = [
@@ -53,6 +53,7 @@
               this.getWidth(this.$refs.barrageFourth)
             ]
         this.initialOffset = barrageWidth + 15
+        console.log(this.initialOffset);
         barrageWidthGroup.map((item,index) => {
           this.animationStyle += `
             .barrage-${index}{
