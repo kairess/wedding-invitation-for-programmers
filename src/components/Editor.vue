@@ -49,7 +49,7 @@
         isCursorVisible: 1,
         canExecute: false,
         canOpen: false,
-        wish: '당신의 한마디',
+        wish: '축하 메시지',
         hasClosed: false,
         canStart: false
       }

@@ -1,18 +1,11 @@
 <template>
-  <div class="wedding-barrage" ref="barrage" :style="{opacity: canStart ? 1 : 0}">
+  <div class="wedding-barrage" ref="barrage" :style="{display: canStart ? 'block' : 'none'}">
     <div v-html="codeInStyleTag"></div>
-    <p class="code barrage-0" ref="barrageFirst" :style="{transform:'translate('+initialOffset+'px)',top:'10px'}">
+    <p class="code">
       <span class="mine">{{ wish }}</span>
-      <span v-for="(item, index) in filterBarrage(barrages, 0)" :key="index">{{ item }}</span>
     </p>
-    <p class="code barrage-1" ref="barrageSecond" :style="{transform:'translate('+initialOffset+'px)',top:'40px'}">
-      <span v-for="(item, index) in filterBarrage(barrages, 1)" :key="index">{{ item }}</span>
-    </p>
-    <p class="code barrage-2" ref="barrageThird" :style="{transform:'translate('+initialOffset+'px)',top:'70px'}">
-      <span v-for="(item, index) in filterBarrage(barrages, 2)" :key="index">{{ item }}</span>
-    </p>
-    <p class="code barrage-3" ref="barrageFourth" :style="{transform:'translate('+initialOffset+'px)',top:'100px'}">
-      <span v-for="(item, index) in filterBarrage(barrages, 3)" :key="index">{{ item }}</span>
+    <p class="code" v-for="(item, index) in barrages" :key="index">
+      <span>{{ item }}</span>
     </p>
     <div class="barrage-space"></div>
   </div>
@@ -35,13 +28,13 @@
         return `<style>${this.animationStyle}</style>`
       }
     },
-    watch: {
-      canStart: function (val) {
-        if (val===true) {
-          this.barrageAnimationStart()
-        }
-      }
-    },
+    // watch: {
+    //   canStart: function (val) {
+    //     if (val===true) {
+    //       this.barrageAnimationStart()
+    //     }
+    //   }
+    // },
     methods: {
       // 팝업 애니메이션 시작
       barrageAnimationStart() {
@@ -53,7 +46,6 @@
               this.getWidth(this.$refs.barrageFourth)
             ]
         this.initialOffset = barrageWidth + 15
-        console.log(this.initialOffset);
         barrageWidthGroup.map((item,index) => {
           this.animationStyle += `
             .barrage-${index}{
@@ -91,17 +83,19 @@
 <style lang="less">
   .wedding-barrage{
     position: relative;
+    padding-top: 20px;
     p{
-      position: absolute;
+      position: relative;
       padding: 5px 0;
-      white-space:nowrap;
-      transition: all 0.6s linear;
-      -webkit-transition: all 0.6s linear;
+      // white-space:nowrap;
+      // transition: all 0.6s linear;
+      // -webkit-transition: all 0.6s linear;
       span{
         padding: 0 15px;
+        font-size: 16px !important;
         &.mine{
           color: #e6db74;
-          padding: 4px 6px;
+          padding: 3px 10px;
           border: 1px solid #e6db74;
         }
       }
