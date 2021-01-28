@@ -2,26 +2,31 @@
   <div class="wedding-barrage" ref="barrage" :style="{display: canStart ? 'block' : 'none'}">
     <div v-html="codeInStyleTag"></div>
     <p class="code">
-      <span class="mine">{{ wish }}</span>
+      <span class="mine">{{ wish }} <small>{{ wishCreatedAt }}</small></span>
     </p>
     <p class="code" v-for="(item, index) in barrages" :key="index">
-      <span>{{ item }}</span>
+      <span>{{ item.barrage }} <small>{{ item.createdAt }}</small></span>
     </p>
     <div class="barrage-space"></div>
   </div>
 </template>
 
 <script>
-  import data from '../mock/data'
+  import axios from 'axios'
 
   export default {
-    props: ['wish', 'canStart'],
+    props: ['wish', 'wishCreatedAt', 'canStart'],
     data(){
       return {
-        barrages: data.barrages,
+        barrages: [],
         animationStyle:'',
         initialOffset: 0
       }
+    },
+    mounted () {
+      axios.get('http://localhost:5000/barrages').then(response => (
+        this.barrages = response.data
+      ))
     },
     computed: {
       codeInStyleTag: function () {

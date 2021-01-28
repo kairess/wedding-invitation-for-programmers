@@ -37,7 +37,7 @@ def post_barrage():
 
     barrages.insert(0, {
         'barrage': barrage,
-        'createdAt': datetime.now().strftime('%-m월 %-d일 %H시쯤')
+        'createdAt': datetime.now().strftime('%-m월 %-d일 %-H시쯤')
     })
 
     with open(barrage_path, 'w', encoding='utf-8') as f:

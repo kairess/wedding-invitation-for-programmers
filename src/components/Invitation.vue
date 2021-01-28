@@ -6,7 +6,7 @@
           <div class="content-inside">
             <img class="content-inside-photo" src="../images/photo.jpg">
             <p>우리 결혼했어요！</p>
-            <p><b>Jun & undefined</b></p>
+            <p><b>이희수 & 이태희</b></p>
             <p>시간：2021년 5월 8일 오후 1시</p>
             <p>장소：<b>용산가족공원 연못광장</b></p>
             <div class="content-inside-bless">
@@ -35,6 +35,9 @@
 </template>
 
 <script>
+import axios from 'axios'
+var querystring = require('querystring')
+
 export default {
   props: ['canOpen'],
   data() {
@@ -63,6 +66,13 @@ export default {
         if (!this.wish) {
           return
         }
+
+        axios.post('http://localhost:5000/barrage', querystring.stringify({
+          'barrage': this.wish
+        })).catch((err) => {
+          console.log(err)
+        })
+
         this.isOpening = false
         this.$refs.wishInput.blur()
         setTimeout(() => {

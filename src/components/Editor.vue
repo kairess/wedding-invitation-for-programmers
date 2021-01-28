@@ -24,7 +24,7 @@
     </div>
     <Executions :canExecute="canExecute" @onUpdating="scrollToBottom" @onFinish="canOpen = true; canStart=true;"/>
     <invitation :canOpen="canOpen" @onClose="canOpen = false, hasClosed = true" @sendBarrage="onAfterSending"/>
-    <Barrage :wish="wish" :canStart="canStart"/>
+    <Barrage :wish="wish" :wishCreatedAt="wishCreatedAt" :canStart="canStart"/>
   </div>
 </template>
 
@@ -50,6 +50,7 @@
         canExecute: false,
         canOpen: false,
         wish: '축하 메시지',
+        wishCreatedAt: '',
         hasClosed: false,
         canStart: false
       }
@@ -84,7 +85,7 @@
           let step = () => {
             let randomNumber = Math.round(Math.random() * 6)
             // 타자치는 속도
-            if(count % 2 === 0 && randomNumber % 4 === 0){
+            if(count % 2 === 0 && randomNumber % 1 === 0){ // randomNumber % 4
               this.currentCode = this.code.substring(0, typingCount)
               typingCount++
             }
@@ -107,6 +108,7 @@
       // 팝업을 보내고 나서
       onAfterSending(wish) {
         this.wish = wish
+        this.wishCreatedAt = '방금전'
         this.canOpen = false
         // setTimeout(() => {
         //   this.canStart = true
