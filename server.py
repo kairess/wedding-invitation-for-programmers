@@ -35,7 +35,7 @@ def post_barrage():
     with open(barrage_path, 'r', encoding='utf-8') as f:
         barrages = json.load(f)
 
-    barrages.insert(0, {
+    barrages.append({
         'barrage': barrage,
         'createdAt': datetime.now().strftime('%-m월 %-d일 %-H시쯤')
     })
