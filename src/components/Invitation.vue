@@ -4,7 +4,11 @@
       <div class="invitation-cover">
         <div class="cover-content" :class="{'invitation-up':isOpening}">
           <div class="content-inside">
-            <img class="content-inside-photo" src="../images/photo.jpg">
+            <video autoplay loop>
+              <source src="../images/video.mp4" type="video/mp4">
+              다른 브라우저로 열어주세요!
+            </video>
+            <!-- <img class="content-inside-photo" src="../images/photo.jpg"> -->
             <p>우리 결혼했어요！</p>
             <p><b>이희수 & 이태희</b></p>
             <p>시간：2021년 5월 8일 오후 1시</p>
@@ -85,6 +89,10 @@ export default {
 </script>
 
 <style lang="less">
+  video {
+    width: 100%;
+  }
+
   .wedding-invitation{
     position: fixed;
     top: 0;
@@ -122,7 +130,7 @@ export default {
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: #fefefe;
+        background-color: #f7decb;
         border-radius: 10px;
         perspective: 500px;
         box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.15);
@@ -204,7 +212,7 @@ export default {
           width: 70%;
           height: 100%;
           border-radius: 10px;
-          background-color: #fefefe;
+          background-color: #f7decb;
           box-shadow: 5px 0 10px rgba(0,0,0,0.2);
           z-index: 6;
           transition: transform 0.5s;
@@ -223,7 +231,7 @@ export default {
           width: 40%;
           height: 100%;
           border-radius: 10px;
-          background-color: #fefefe;
+          background-color: #f7decb;
           box-shadow: -5px 0 10px rgba(0,0,0,0.2);
           z-index: 5;
           transition: transform 0.5s;
