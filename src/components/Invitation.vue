@@ -166,10 +166,10 @@ export default {
                 border-bottom: 1px solid #f7debb;
                 color: #a9895d;
                 background: transparent;
-                &::-webkit-input-placeholder { color: #E8D1B1;font-size: 12px; }
-                &::-moz-placeholder { color: #E8D1B1;font-size: 12px; }
-                &:-ms-input-placeholder { color: #E8D1B1;font-size: 12px; }
-                &:-moz-placeholder { color: #E8D1B1;font-size: 12px; }
+                &::-webkit-input-placeholder { color: #a9895d;font-size: 12px; }
+                &::-moz-placeholder { color: #a9895d;font-size: 12px; }
+                &:-ms-input-placeholder { color: #a9895d;font-size: 12px; }
+                &:-moz-placeholder { color: #a9895d;font-size: 12px; }
               }
               >div{
                 display: flex;
