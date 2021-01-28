@@ -122,7 +122,7 @@ export default {
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: #D65047;
+        background-color: #fefefe;
         border-radius: 10px;
         perspective: 500px;
         box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.15);
@@ -204,7 +204,7 @@ export default {
           width: 70%;
           height: 100%;
           border-radius: 10px;
-          background-color: #D65047;
+          background-color: #fefefe;
           box-shadow: 5px 0 10px rgba(0,0,0,0.2);
           z-index: 6;
           transition: transform 0.5s;
@@ -223,7 +223,7 @@ export default {
           width: 40%;
           height: 100%;
           border-radius: 10px;
-          background-color: #D65047;
+          background-color: #fefefe;
           box-shadow: -5px 0 10px rgba(0,0,0,0.2);
           z-index: 5;
           transition: transform 0.5s;
