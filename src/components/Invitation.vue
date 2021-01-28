@@ -4,7 +4,7 @@
       <div class="invitation-cover">
         <div class="cover-content" :class="{'invitation-up':isOpening}">
           <div class="content-inside">
-            <video autoplay loop>
+            <video ref="video" loop>
               <source src="../images/video.mp4" type="video/mp4">
               다른 브라우저로 열어주세요!
             </video>
@@ -56,9 +56,11 @@ export default {
     // 초대장 열기
     openInvitation(){
       this.isOpening = true
+      this.$refs.video.play()
     },
     closeInvitation () {
       this.isOpening = false
+      this.$refs.video.pause()
       setTimeout(() => {
         this.$emit('onClose')
       }, 660)
