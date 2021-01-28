@@ -49,7 +49,7 @@
         isCursorVisible: 1,
         canExecute: false,
         canOpen: false,
-        wish: '축하 메시지',
+        wish: '',
         wishCreatedAt: '',
         hasClosed: false,
         canStart: false

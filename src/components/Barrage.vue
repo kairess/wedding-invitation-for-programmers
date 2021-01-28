@@ -2,10 +2,13 @@
   <div class="wedding-barrage" ref="barrage" :style="{display: canStart ? 'block' : 'none'}">
     <div v-html="codeInStyleTag"></div>
     <p class="code">
-      <span class="mine">{{ wish }} <small>{{ wishCreatedAt }}</small></span>
+      <span class="mine">축복의 한 마디</span>
     </p>
     <p class="code" v-for="(item, index) in barrages" :key="index">
       <span>{{ item.barrage }} <small>{{ item.createdAt }}</small></span>
+    </p>
+    <p class="code" v-if="wish">
+      <span class="mine2">{{ wish }} <small>{{ wishCreatedAt }}</small></span>
     </p>
     <div class="barrage-space"></div>
   </div>
@@ -102,6 +105,9 @@
           color: #e6db74;
           padding: 3px 10px;
           border: 1px solid #e6db74;
+        }
+        &.mine2{
+          color: #e6db74;
         }
       }
     }
