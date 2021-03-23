@@ -85,7 +85,7 @@
           let step = () => {
             let randomNumber = Math.round(Math.random() * 6)
             // 타자치는 속도
-            if(count % 2 === 0 && randomNumber % 1 === 0){ // randomNumber % 4
+            if(count % 2 === 0 && randomNumber % 2 === 0){ // randomNumber % 4
               this.currentCode = this.code.substring(0, typingCount)
               typingCount++
             }

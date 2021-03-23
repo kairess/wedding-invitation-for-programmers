@@ -4,11 +4,11 @@ export default {
 // 오늘은 기분 최고인 날!
 // 최고의 기분으로 코드를 적어줄게요!
 const { 😆, 🤗 } = 🌎;
-😆.say('결혼해줄래!❤️');
-🤗.response('네, 당신이 나를 결혼식에 초대한다면요🍉！');
+😆.say('우리 결혼식에 놀러오세요🍷');
+🤗.response('우리 함께 사진 찍어요🏞🌇🌃');
 Utils.marry(😆,🤗);
 Utils.generateInvitation(😆,🤗);
-// 자, 제가
+// 자, 이제
 // 진행해보도록 하겠습니다!`,
   executions: [{
     name:'초기화',
