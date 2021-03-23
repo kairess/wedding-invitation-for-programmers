@@ -4,14 +4,14 @@
       <div class="invitation-cover">
         <div class="cover-content" :class="{'invitation-up':isOpening}">
           <div class="content-inside">
-            <video ref="video" loop>
+            <!-- <video ref="video" loop>
               <source src="../images/video.mp4" type="video/mp4">
               다른 브라우저로 열어주세요!
-            </video>
-            <!-- <img class="content-inside-photo" src="../images/photo.jpg"> -->
+            </video> -->
+            <img class="content-inside-photo" src="../images/10.jpeg">
             <p>우리 결혼했어요！</p>
             <p><b>이희수 & 이태희</b></p>
-            <p>시간：2021년 5월 8일 오후 1시</p>
+            <p>시간：2021년 5월 8일 오후 2시</p>
             <p>장소：<b>용산가족공원 연못광장</b></p>
             <div class="content-inside-bless">
               <input
@@ -56,11 +56,11 @@ export default {
     // 초대장 열기
     openInvitation(){
       this.isOpening = true
-      this.$refs.video.play()
+      // this.$refs.video.play()
     },
     closeInvitation () {
       this.isOpening = false
-      this.$refs.video.pause()
+      // this.$refs.video.pause()
       setTimeout(() => {
         this.$emit('onClose')
       }, 660)
@@ -75,9 +75,7 @@ export default {
 
         axios.post('http://localhost:5000/barrage', querystring.stringify({
           'barrage': this.wish
-        })).catch((err) => {
-          console.log(err)
-        })
+        }))
 
         this.isOpening = false
         this.$refs.wishInput.blur()
