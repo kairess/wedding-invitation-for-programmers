@@ -1,12 +1,16 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template, current_app, send_file
 from flask_cors import CORS
 import json, os
 from datetime import datetime
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='dist', static_url_path='')
 CORS(app)
 
 barrage_path = 'data/barrages.json'
+
+@app.route('/', methods=['GET'])
+def index():
+    return send_file('dist/index.html')
 
 @app.route('/barrages', methods=['GET'])
 def get_barrages():

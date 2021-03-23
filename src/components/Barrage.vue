@@ -27,7 +27,7 @@
       }
     },
     mounted () {
-      axios.get('http://localhost:5000/barrages').then(response => (
+      axios.get('/barrages').then(response => (
         this.barrages = response.data
       ))
     },

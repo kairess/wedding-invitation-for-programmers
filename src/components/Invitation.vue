@@ -73,7 +73,7 @@ export default {
           return
         }
 
-        axios.post('http://localhost:5000/barrage', querystring.stringify({
+        axios.post('/barrage', querystring.stringify({
           'barrage': this.wish
         }))
 
