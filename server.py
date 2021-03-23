@@ -1,7 +1,7 @@
-from flask import Flask, jsonify, request, render_template, current_app, send_file
+from flask import Flask, jsonify, request, send_file
 from flask_cors import CORS
 import json, os
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 
 app = Flask(__name__, static_folder='dist', static_url_path='')
 CORS(app)
@@ -41,7 +41,7 @@ def post_barrage():
 
     barrages.append({
         'barrage': barrage,
-        'createdAt': datetime.now().strftime('%-m월 %-d일 %-H시쯤')
+        'createdAt': datetime.now(timezone(timedelta(hours=+9))).strftime('%-m월 %-d일 %-H시쯤')
     })
 
     with open(barrage_path, 'w', encoding='utf-8') as f:
