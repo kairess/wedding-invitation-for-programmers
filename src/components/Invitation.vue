@@ -15,7 +15,7 @@
             <p>장소：<b>용산가족공원 연못광장</b></p>
             <div class="content-inside-bless">
               <input
-                placeholder="축복의 한 마디" 
+                placeholder="여기를 눌러 축복의 한 마디를 입력해주세요" 
                 @keyup.enter="sendBarrage"
                 @focus="isFocused = true"
                 @blur="isFocused = false, hasEntered = false"
@@ -24,8 +24,13 @@
               >
               <p v-if="!wish && isFocused && hasEntered">축복을 입력해주세요!</p>
               <div>
-                <button @click="sendBarrage">전송</button>
+                <button @click="sendBarrage">보내기</button>
                 <button @click="closeInvitation">닫기</button>
+              </div>
+              <div>
+                <a href="https://qr.kakaopay.com/281006011000078669865552" target="_blank" class="button">
+                  결혼식 후원하기
+                </a>
               </div>
             </div>
           </div>
@@ -89,6 +94,26 @@ export default {
 </script>
 
 <style lang="less">
+  a.button {
+    text-decoration: none;
+    width: 100%;
+    height: 35px;
+    color: #a9895d;
+    outline: none;
+    margin-top: 6px;
+    border: 1px solid #f7debb;
+    background: transparent;
+    flex: 1;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  a.button:hover {
+    color: #a9895d;
+  }
+
   video {
     width: 100%;
   }
