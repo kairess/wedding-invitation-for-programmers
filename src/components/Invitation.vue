@@ -8,11 +8,11 @@
               <source src="../images/video.mp4" type="video/mp4">
               다른 브라우저로 열어주세요!
             </video> -->
-            <img class="content-inside-photo" src="../images/10.jpeg">
-            <p>우리 결혼합니다！</p>
-            <p><b>이희수 & 이태희</b></p>
-            <p>시간：2021년 5월 8일 오후 2시</p>
-            <p>장소：<b>용산가족공원 연못광장</b></p>
+            <img class="content-inside-photo" src="../images/ktw.jpeg">
+            <p>결혼합니다！</p>
+            <p><b>박혜리 & 권태욱</b></p>
+            <p>시간：2021년 7월 10일 토요일 오후 5시</p>
+            <p>장소：<b>서울 엘타워 오르체홀 (양재역 9번)</b></p>
             <div class="content-inside-bless">
               <input
                 placeholder="여기를 눌러 축복의 한 마디를 입력해주세요" 
@@ -26,11 +26,6 @@
               <div>
                 <button @click="sendBarrage">보내기</button>
                 <button @click="closeInvitation">닫기</button>
-              </div>
-              <div>
-                <a href="https://qr.kakaopay.com/281006011000078669865552" target="_blank" class="button">
-                  결혼식 후원하기
-                </a>
               </div>
             </div>
           </div>
