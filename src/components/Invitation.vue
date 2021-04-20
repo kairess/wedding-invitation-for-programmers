@@ -10,9 +10,12 @@
             </video> -->
             <img class="content-inside-photo" src="../images/10.jpeg">
             <p>우리 결혼합니다！</p>
-            <p><b>이희수 & 이태희</b></p>
+            <p>이세원 · 김자은 의 장남 <b>이태희</b></p>
+            <p>이윤주 · 김미정 의 장녀 <b>이희수</b></p>
             <p>시간：2021년 5월 8일 오후 2시</p>
             <p>장소：<b>용산가족공원 연못광장</b></p>
+            <p>코로나 19로 인한 사회적 거리두기로 예식 참석 인원에 제한이 있습니다.
+              <br>축하해주신 여러분들을 모두 초대하지 못하는 점 깊은 양해 부탁드립니다.</p>
             <div class="content-inside-bless">
               <input
                 placeholder="여기를 눌러 축복의 한 마디를 입력해주세요" 
@@ -29,9 +32,15 @@
               </div>
               <div>
                 <a href="https://qr.kakaopay.com/281006011000078669865552" target="_blank" class="button">
-                  결혼식 후원하기
+                  결혼식 후원하기 (카카오페이)
                 </a>
               </div>
+              <p style="text-align: center; margin-top: 10px;">
+                기업은행 420-069159-01-010 이태희
+              </p>
+              <p style="text-align: center; margin-top: 5px;">
+                기업은행 420-072908-01-013 이희수
+              </p>
             </div>
           </div>
         </div>
