@@ -13,6 +13,7 @@
             <p><b>이희수 & 이태희</b></p>
             <p>시간：2021년 5월 8일 오후 2시</p>
             <p>장소：<b>용산가족공원 연못광장</b></p>
+            <p>주차：<b>국립중앙박물관 주차장</b></p>
             <div class="content-inside-bless">
               <input
                 placeholder="여기를 눌러 축복의 한 마디를 입력해주세요" 
